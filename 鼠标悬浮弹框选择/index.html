@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标悬浮弹出下拉框效果</title>
+	<style type="text/css">
+	*{font-family: "Microsoft YaHei";margin:0;padding:0;}
+	ul,li{list-style:none;}
+	.dropWrap{width:90%;margin:20px auto;}
+	.drop{float:left;margin-right:3%;position:relative;}
+	.dropName:hover{cursor:pointer;text-decoration:underline;}
+	.dropMenu{position:absolute;left:3em;top:2em;width:100%;border:1px blue solid;display:none;}
+	.dropMenu li{padding:.5em;}
+	.dropMenu li:hover{background:#e0e0e0;cursor:pointer;}
+	</style>
+</head>
+<body>
+	<div class="dropWrap">
+		<div class="drop">
+			<p class="dropName">筛选：<span>全部用户</span></p>
+			<ul class="dropMenu">
+				<li>用户1</li>
+				<li>用户2</li>
+				<li>用户3</li>
+			</ul>
+		</div>
+		<div class="drop">
+			<p class="dropName">排序：<span>下单时间</span></p>
+			<ul class="dropMenu">
+				<li>下单时间</li>
+				<li>订单状态</li>
+				<li>客户名称</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="../jquery-1.9.1.min.js"></script>
+	<script src="drop.js"></script>
+	<script>
+	$(".drop").drop();
+	</script>
+</body>
+</html>

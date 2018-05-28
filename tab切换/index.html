@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab</title>
+	<style type="text/css">
+	.div input{background:white;}
+	.div input.active{background:yellow;}
+	.div div{width:200px;height:200px;background:#ccc;display:none;}
+	</style>
+</head>
+<body>
+	<div id="div1" class="div">
+		<input class="active" type="button" value="aaa">
+		<input type="button" value="bbb">
+		<input type="button" value="ccc">
+		<div style="display:block;">aaa</div>
+		<div>bbb</div>
+		<div>ccc</div>
+	</div>
+
+	<div id="div2" class="div">
+		<input class="active" type="button" value="aaa">
+		<input type="button" value="bbb">
+		<input type="button" value="ccc">
+		<div style="display:block;">aaa</div>
+		<div>bbb</div>
+		<div>ccc</div>
+	</div>
+	
+	<script src="../jquery-1.9.1.min.js"></script>
+	<script src="tab.js"></script>
+	<script>
+	$(function(){
+		$("#div1").tab();
+		$("#div2").tab();
+	})
+	</script>
+</body>
+</html>

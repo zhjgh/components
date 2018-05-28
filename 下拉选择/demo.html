@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.arrow-down {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    width: 20px;
+	    height: 32px;
+	    background: url(img/arrow-down.png) no-repeat;
+	    background-size: 100% 100%;
+	}
+
+
+
+	/* 上面两个样式原来代码有了，只需要下面这些样式 */
+	.new-select-wrap{
+		border: 1px #dcdcdc solid;
+		width: 150px;
+		height: 32px;
+		line-height: 32px;
+		position: relative;
+		cursor: pointer;
+	}
+	.new-select-inner{
+		position: absolute;
+		left: 5px;
+		top: 0;
+		max-width: 120px;
+		overflow: hidden;
+	}
+	.new-select-box {
+	    position: absolute;
+	    top: 33px;
+	    left: -1px;
+	    width: 150px;
+	    max-height: 200px;
+	    overflow-y: auto;
+	    border: 1px #3c8dbc solid;
+	    background: #fff;
+	    display: none;
+	}
+	.new-select-box p{
+		padding: 0 5px;
+	}
+	.new-select-box p:hover{
+		background:#e4e7e7;
+	}
+	</style>
+</head>
+<body>
+	<!-- 这些html代码替换我给你截图的绿色部分 -->
+	<div class="new-select-wrap">
+		<span class="new-select-inner"></span>
+		<span class="arrow-down"></span>
+		<div class="new-select-box">
+			<p>11111</p>
+			<p>22222</p>
+			<p>33333</p>
+			<p>44444</p>
+		</div>
+	</div>
+	
+	<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+	;(function($, window, document, undefined){
+
+		var Drop = function(id){
+			this.$element = id;
+		};
+
+		Drop.prototype.init = function(){
+			var _this = this.$element;
+
+			_this.on('click', function(event){
+				event.stopPropagation();
+				$(this).find('.new-select-box').show();
+			});
+
+			_this.find('.new-select-box p').on('click', function(event){
+				event.stopPropagation();
+				$(this).parent().hide();
+				_this.find('.new-select-inner').html($(this).html());
+			});
+
+			$(document).on('click', function(){
+				_this.find('.new-select-box').hide();
+			});
+		}
+
+		$.fn.drop = function(){
+			var drop = new Drop(this);
+			return drop.init();
+		};
+
+	})(jQuery, window, document);
+
+	$(".new-select-wrap").drop();//调用
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+#cover-layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: .5;
+    z-index: 99;
+}
+
+#dialog-modal {
+    width: 300px;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    margin-left: -150px;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 100;
+}
+
+#dialog-header {
+    padding: 1em 0 .5em;
+    text-align: center;
+}
+
+#dialog-body {
+    padding: 1em 0;
+    text-align: center;
+}
+
+#dialog-footer {
+    padding: 1em 2em;
+    overflow: hidden;
+}
+
+#dialog-confirm {
+    float: right;
+    padding: .5em 1.5em;
+    background: green;
+    color: #fff;
+    border-radius: .2em;
+    cursor: pointer;
+}
+
+#dialog-cancel {
+    float: left;
+    padding: .5em 1.5em;
+    background: black;
+    color: #fff;
+    border-radius: .2em;
+    cursor: pointer;
+}
+
+#dialog-hide {
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}

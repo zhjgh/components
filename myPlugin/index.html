@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的插件</title>
+	<style type="text/css">
+	#wrap{border:1px #000 solid;}
+	#btns{overflow:hidden;}
+	#btns span{float:left;width:25%;height:50px;text-align:center;line-height:50px;cursor:pointer;}
+	#slides{height:300px;overflow:hidden;}
+	#slides div{height:300px;text-align:center;line-height:300px;}
+	</style>
+</head>
+<body>
+	<div id="wrap"></div>
+
+	<script src="../jquery-1.9.1.min.js"></script>
+	<script src="main.js"></script>
+	<script>
+	$(function(){
+		$("#wrap").myPlugin();
+	})
+	</script>
+</body>
+</html>
